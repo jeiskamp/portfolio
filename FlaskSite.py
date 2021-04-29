@@ -1,4 +1,6 @@
+import requests
 from flask import Flask, redirect, url_for, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
@@ -10,9 +12,9 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/projects")
-def projects():
-    return render_template("projects.html")
+@app.route("/weather")
+def weather():
+    return render_template("weather.html")
 
 @app.route("/resume")
 def resume():
